@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brawl Boost Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="admin-locked">
+  <div class="admin-login" id="adminLogin">
+    <form class="admin-login-card" id="adminLoginForm">
+      <p class="eyebrow">Faqat admin uchun</p>
+      <h1>Admin kirish</h1>
+      <p class="hero-text">Admin panel foydalanuvchilarga ko'rinmaydi. Davom etish uchun parol kiriting.</p>
+      <label class="admin-field">
+        <span>Admin parol</span>
+        <input type="password" id="adminPassword" placeholder="Parol" required>
+      </label>
+      <button class="primary-button full-width" type="submit">Kirish</button>
+      <p class="admin-error" id="adminError"></p>
+    </form>
+  </div>
+
+  <div class="page-shell admin-app" id="adminApp" hidden>
+    <header class="hero admin-hero">
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark">AD</span>
+          <div>
+            <p class="eyebrow">Faqat admin uchun</p>
+            <h1>Brawl Boost Admin</h1>
+          </div>
+        </div>
+        <div class="topbar-links">
+          <a class="nav-link" href="../index.html">Store sahifa</a>
+          <a class="ghost-button" href="#orders">Zakazlar</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-tag">Zakazlar va narxlar boshqaruvi</p>
+          <h2>Zakazlarni ko'ring va narxlarni shu yerdan o'zgartiring.</h2>
+          <p class="hero-text">
+            Bu admin sahifa brauzer ichida saqlangan zakazlarni ko'rsatadi. Shu yerda barcha mahsulot narxlarini yangilab, asosiy store sahifasiga qo'llashingiz mumkin.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#prices">Narxlarni o'zgartirish</a>
+            <a class="secondary-button" href="#orders">Zakazlarni ko'rish</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <p class="card-kicker">Admin eslatma</p>
+          <h3>Lokal boshqaruv</h3>
+          <p class="price" id="orderCount">0 ta</p>
+          <p class="card-copy">Zakazlar va narxlar shu brauzerda saqlanadi. Boshqa qurilmadan kirilsa alohida bo'ladi.</p>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="prices">
+        <div class="section-heading">
+          <p class="eyebrow">Narxlar</p>
+          <h2>Mahsulot narxlarini shu yerdan o'zgartiring.</h2>
+        </div>
+
+        <form class="admin-card admin-form" id="priceForm">
+          <div class="price-grid" id="priceGrid"></div>
+          <div class="admin-actions">
+            <button class="primary-button" type="submit">Narxlarni saqlash</button>
+            <button class="secondary-button" type="button" id="resetPrices">Standart narxlar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="section" id="orders">
+        <div class="section-heading">
+          <p class="eyebrow">Zakazlar</p>
+          <h2>Tushgan barcha so'rovlar shu yerda.</h2>
+        </div>
+
+        <div class="admin-card orders-card">
+          <div class="admin-actions">
+            <button class="secondary-button" type="button" id="clearOrders">Zakazlarni tozalash</button>
+          </div>
+          <div class="orders-list" id="ordersList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
