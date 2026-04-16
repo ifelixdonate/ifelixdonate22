@@ -1,0 +1,14 @@
+{
+  "name": "brawl-boost-orders",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brawl Stars top up order page with payout page and email backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1"
+  }
+}
